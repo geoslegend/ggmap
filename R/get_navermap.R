@@ -116,7 +116,7 @@ get_navermap <- function(
 
 
   # url segments
-  base_url <- "http://openapi.naver.com/map/getStaticMap?version=1.1&"
+  base_url <- "https://openapi.naver.com/v1/map/staticmap.bin?"
   center_url <- if(all(is.numeric(center))){ # lon/lat specification
     center <- round(center, digits = 6)
     lon <- center[1]; lat <- center[2]
@@ -130,7 +130,7 @@ get_navermap <- function(
 
   baselayer_url <- paste0("baselayer=", baselayer)
   overlayers_url <- paste0("overlayers=", paste(overlayers, collapse=","))
-  key_url <- paste0("key=", key)
+  key_url <- paste0("clientId=", key)
   uri_url <- paste0("uri=", uri)
   crs_url <- paste0("crs=", crs)
 
